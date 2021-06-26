@@ -1,6 +1,6 @@
 # regexTutorial
 
-This tutorial is to explain what a regular expression, or regex, is and how they are used in the world of coding.  Firstly, a regular expression is a sequence of symbols and characters expressing a string or pattern to be searched for within a longer piece of text.  Think of it as a heat seeking missile variant of Ctrl+F(or Command+F on a Mac).  Whereas the normal 'find' feature can be bland and one-note, by using regular expression, a programmer can widen the scope of a search, while also applying very defined filters.
+This tutorial is to explain what a regular expression, or regex, is and how they are used in the world of coding.  Firstly, a regular expression is a sequence of symbols and characters expressing a string or pattern to be searched for within a longer piece of code.  Think of it as a heat seeking missile variant of Ctrl+F(or Command+F on a Mac).  Whereas the normal 'find' feature can be bland and one-note, by using regular expression, a programmer can widen the scope of a search, while also applying very defined filters.
 
 ## Summary
 
@@ -16,6 +16,9 @@ To demonstrate what this all means in practical terms, I will go through a sampl
 - [Character Classes](#character-classes)
 - [Flags](#flags)
 - [Character Escapes](#character-escapes)
+- [Sample Regex](#sample-regex)
+- [Resources Used](#resources-used)
+- [Contact](#contact)
 
 ## Regex Components
 
@@ -34,7 +37,7 @@ Quantifiers specify how many instances of a character, group, or character class
 
 ### Grouping Constructs
 
-Grouping constructs break up regular expressions into smaller, more manageable pieces as they get larger and more complicated.  The primary way you group a section of a regex is by using parentheses (`()`). Each section within parentheses is known as a subexpression.  In our example you'll notice 3 completed sets of parentheses (`()`), that means this line of code can be broken down into three subexpressions.  Grouping constructs can also be a useful way for the user to identify what they're trying to find a match for even if they haven't previously been informed so long as they have a little knowledge of regex.  You'll notice in between the 1st and 2nd subexpression, there's an at sign (`@`) and in between the 2nd and 3rd theres a slash (`\`) followed by a dot (`.`).  `@` and `\.` are both literally the `@` sign and a `.`(the `.` being preceeded by the `\` makes it literal), so now we know we've got (Grouping 1)@(Grouping 2).(Grouping 3)...which looks an awful like the skeleton of an email address(which we already know we're trying to find).
+Grouping constructs break up regular expressions into smaller, more manageable pieces as they get larger and more complicated.  The primary way you group a section of a regex is by using parentheses (`()`). Each section within parentheses is known as a subexpression.  In our example you'll notice 3 completed sets of parentheses (`()`), that means this line of code can be broken down into three subexpressions.  Grouping constructs can also be a useful way for the user to identify what they're trying to find a match for even if they haven't previously been informed so long as they have a little knowledge of regex.  You'll notice in between the 1st and 2nd subexpression, there's an at sign (`@`) and in between the 2nd and 3rd theres a slash (`\`) followed by a dot (`.`).  `@` and `\.` are both literally the `@` sign and a `.`(the `.` being preceeded by the `\` makes it literal), so now we know we've got (Grouping 1)@(Grouping 2).(Grouping 3)...which looks an awful lot like the skeleton of an email address(which we already know we're trying to find).
 
 ### Bracket Expressions
 
@@ -63,6 +66,14 @@ Now back to the sample regex we previously referenced.  I'll explain it in it's 
 `([a-z0-9_\.-]+)` is the first grouping created by `(` and `)`, inside that, `[` and `]` is a bracket expression which creates a character class, inside that `a-z` matches a single character in the alphabetical range of a and z, `0-9` matches a single character in the numerical range of 0 and 9, `_` is a literal (_), `\.` is a literal (.) as the (\) means the next character is literal, and `-` is a literal -.  The `+` after the character class, but still before the end of group 1 is a quantifier which matches the previous token between one and unlimited times, as many times as possible, giving back as needed.<br>
 `@` means it's a literal at sign @.<br>
 `([\da-z\.-]+)` is the second grouping, refer to the first grouping to define this section.  The only new character is `\d`, which is a meta escape that matches a digit equivalent to [0-9].<br>
-`\.` means it's a literal dot ..<br>
+`\.` means it's a literal dot (.).<br>
 `([a-z\.]{2,6})` is the third and final grouping, again, refer to the first grouping for definitions.  The only new character here is the `{2, 6}` quantifier, which matches the previous token between 2 and 6 times, as many times as possible, giving back as needed.<br>
 `$` asserts the position at the end of the string.  It is a meta escape.
+
+### Resources Used
+- YouTube
+- Google
+- JavaScript: The Definitive Guide 7th Edition by David Flanagan
+
+### Contact
+If you have any questions, please refer to my Github page, [JamieKaczor](https://github.com/JamieKaczor), or contact me through my email, Dignanjk@aol.com
