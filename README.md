@@ -14,7 +14,6 @@ To demonstrate what this all means in practical terms, I will go through a sampl
 - [Grouping Constructs](#grouping-constructs)
 - [Bracket Expressions](#bracket-expressions)
 - [Character Classes](#character-classes)
-- [The OR Operator](#the-or-operator)
 - [Flags](#flags)
 - [Character Escapes](#character-escapes)
 
@@ -40,3 +39,13 @@ Grouping constructs break up regular expressions into smaller, more manageable p
 ### Bracket Expressions
 
 A bracket expression is a list of characters enclosed by (`[`) and (`]`).  It matches any single character in that list.  If the first character in the list is the caret (`^`) it is telling us not to match the proceeding characters in that list.  For syntax, in most cases unless otherwise specified, `[abcd]` === `[a-d]`.  In our example in the 1st grouping of `([a-z0-9_\.-]+)`, bracket expression creates the character class of `[a-z0-9_\.-]`...this tells the search to look for any lowercase letter between a-z, any number between 0-9, and also the literal characters (`_`), (`.`), and (`-`).  In the second grouping the character `\d` is telling the search to match any digit equivalent to [0-9].
+
+### Character Classes
+
+Briefly mentioned under 'Bracket Expressions', character classes are simply a special notation that matches any symbol from a certain set.  Square brackets are used to specify character classes. Use a hyphen inside a character class to specify the characters' range.
+
+### Flags
+
+Flags affect regular expression searches.  There are none used in our example, but there are a couple important ones to know that are used in JavaScript.<br>
+`i`-means the search will be case insensitive: no difference between `a` and `A`.<br>
+`g`-means the search will look for all matches, not just the first one.<br>
