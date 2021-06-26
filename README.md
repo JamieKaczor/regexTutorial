@@ -1,1 +1,30 @@
 # regexTutorial
+
+This tutorial is to explain what a regular expression, or regex, is and how they are used in the world of coding.  Firstly, a regular expression is a sequence of symbols and characters expressing a string or pattern to be searched for within a longer piece of text.  Think of it as a heat seeking missile variant of Ctrl+F(or Command+F on a Mac).  Whereas the normal 'find' feature can be bland and one-note, by using regular expression, a programmer can widen the scope of a search, while also applying very defined filters.
+
+## Summary
+
+To demonstrate what this all means in practical terms, I will go through a sample regex used in matching an email, explaining each bit of code along the way.  We will be working off of this example:<br>
+ `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
+
+ ## Table of Contents
+
+- [Anchors](#anchors)
+- [Quantifiers](#quantifiers)
+- [Grouping Constructs](#grouping-constructs)
+- [Bracket Expressions](#bracket-expressions)
+- [Character Classes](#character-classes)
+- [The OR Operator](#the-or-operator)
+- [Flags](#flags)
+- [Character Escapes](#character-escapes)
+
+## Regex Components
+
+Before we get to the meat of the regex, you'll notice it begins and ends in slash characters(/).  This is because regex is considered a literal, using a slash(/) at the beginning and at the end is one way for Javascript to create a regex object.
+
+### Anchors
+
+^ and $ are both anchors in regex.  They do not match any actual characters, but instead, match a position before or after characters.  The caret (^) corresponds to the beginning of the text, and the dollar sign ($) corresponds to the end of the text.  An example of what we mean here is as follows-<br>
+`let example = 'RegularExpression';`<br>
+`console.log(/^R/.test(example));`<br>
+If you ran this bit of code you would see `true` printed to the console because R is the 1st letter after the ^ anchor in our example.  If you were to test this using the $ anchor on a literal string make sure to position the final character before the $, not after it like we've shown in the above example, because remember, the $ anchor means the end of the text, so it would be /n$/ not /$n/ or else it will always print out `false`.
