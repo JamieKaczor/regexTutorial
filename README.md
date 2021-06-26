@@ -46,6 +46,23 @@ Briefly mentioned under 'Bracket Expressions', character classes are simply a sp
 
 ### Flags
 
-Flags affect regular expression searches.  There are none used in our example, but there are a couple important ones to know that are used in JavaScript.<br>
+Flags affect regular expression searches.  There are none used in our example, but there are a few important ones to know that are used in JavaScript.<br>
 `i`-means the search will be case insensitive: no difference between `a` and `A`.<br>
 `g`-means the search will look for all matches, not just the first one.<br>
+`m`-means a multi-line input string should be treated as multiple lines.
+
+### Character Escapes
+
+If you want to use any character as a literal in regex, you need to escape them with a backslash (`\`) so that 1\+1=2...otherwise something simple like 1+1=2 could result in an error message, or it can be read as something entirely different because `+` has its own special meaning in regular expression.
+
+### Sample Regex
+
+Now back to the sample regex we previously referenced.  I'll explain it in it's entirety in one place for easy reference.<br>
+`/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`<br>
+`^` asserts the position at the start of the string.  It is a meta escape.<br>
+`([a-z0-9_\.-]+)` is the first grouping created by `(` and `)`, inside that, `[` and `]` is a bracket expression which creates a character class, inside that `a-z` matches a single character in the alphabetical range of a and z, `0-9` matches a single character in the numerical range of 0 and 9, `_` is a literal (_), `\.` is a literal (.) as the (\) means the next character is literal, and `-` is a literal -.  The `+` after the character class, but still before the end of group 1 is a quantifier which matches the previous token between one and unlimited times, as many times as possible, giving back as needed.<br>
+`@` means it's a literal at sign @.<br>
+`([\da-z\.-]+)` is the second grouping, refer to the first grouping to define this section.  The only new character is `\d`, which is a meta escape that matches a digit equivalent to [0-9].<br>
+`\.` means it's a literal dot ..<br>
+`([a-z\.]{2,6})` is the third and final grouping, again, refer to the first grouping for definitions.  The only new character here is the `{2, 6}` quantifier, which matches the previous token between 2 and 6 times, as many times as possible, giving back as needed.<br>
+`$` asserts the position at the end of the string.  It is a meta escape.
