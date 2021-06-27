@@ -75,5 +75,5 @@ Now back to the sample regex we previously referenced.  I'll explain it in it's 
 - Google
 - JavaScript: The Definitive Guide 7th Edition by David Flanagan
 
-### Contact
-If you have any questions, please refer to my Github page, [JamieKaczor](https://github.com/JamieKaczor), or contact me through my email, Dignanjk@aol.com
+### Author
+Jamie Kaczor, an up and coming full stack web developer who enjoys tabletop gaming, fishing, reading, and Swedish Sludge Metal.  If you have any questions, please refer to his Github page, [JamieKaczor](https://github.com/JamieKaczor), or contact him through his email, Dignanjk@aol.com
