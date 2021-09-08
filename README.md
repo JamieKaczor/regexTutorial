@@ -1,5 +1,7 @@
 # regexTutorial
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This tutorial is to explain what a regular expression, or regex, is and how they are used in the world of coding.  Firstly, a regular expression is a sequence of symbols and characters expressing a string or pattern to be searched for within a longer piece of code.  Think of it as a heat seeking missile variant of Ctrl+F(or Command+F on a Mac).  Whereas the normal 'find' feature can be bland and one-note, by using regular expression, a programmer can widen the scope of a search, while also applying very defined filters.
 
 ## Summary
